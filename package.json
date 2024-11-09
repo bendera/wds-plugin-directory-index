@@ -1,0 +1,19 @@
+{
+  "name": "@bendera/wds-plugin-directory-index",
+  "version": "0.0.0",
+  "description": "Directory index plugin for Web Dev Server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wds"
+  },
+  "author": "Adam Bender",
+  "license": "MIT",
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
+  },
+  "peerDependencies": {
+    "@web/dev-server": "*"
+  }
+}
