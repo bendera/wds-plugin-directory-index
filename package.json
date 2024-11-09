@@ -10,6 +10,14 @@
   },
   "author": "Adam Bender",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendera/wds-plugin-directory-index.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bendera/wds-plugin-directory-index/issues"
+  },
+  "homepage": "https://github.com/bendera/wds-plugin-directory-index",
   "devDependencies": {
     "@web/dev-server": "^0.4.6"
   },

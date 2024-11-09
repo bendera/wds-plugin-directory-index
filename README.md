@@ -2,7 +2,7 @@
 
 Directory index plugin for [@web/dev-server](https://modern-web.dev/docs/dev-server/overview/).
 
-![screenshot](screenshot.png)
+![screenshot](https://raw.githubusercontent.com/bendera/wds-plugin-directory-index/b8cacf51bd9147101c31b1c44a0898d1b1b8cbd0/screenshot.png)
 
 ## Installation
 
