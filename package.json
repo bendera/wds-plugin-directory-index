@@ -1,6 +1,6 @@
 {
   "name": "@bendera/wds-plugin-directory-index",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Directory index plugin for Web Dev Server",
   "main": "index.js",
   "type": "module",
