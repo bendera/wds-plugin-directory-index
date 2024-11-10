@@ -118,6 +118,7 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
 
           li a {
             align-items: center;
+            border-radius: 4px;
             color: inherit;
             display: flex;
             justify-content: flex-start;
@@ -128,6 +129,7 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
 
           li a:hover {
             background-color: #dbeafe;
+            outline: 1px solid #bfdbfe;
           }
         </style>
       </head>
