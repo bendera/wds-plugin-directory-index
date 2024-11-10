@@ -1,6 +1,6 @@
-import {stat, readdir} from 'node:fs/promises';
-import path, {dirname} from 'node:path';
-import {fileURLToPath} from 'node:url';
+import { stat, readdir } from "node:fs/promises";
+import path, { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -64,23 +64,25 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
     /* empty */
   }
 
-  const dirPrefix = originalUrl.endsWith('/') ? originalUrl : originalUrl + '/';
-  const parentDirLink = html`<li>
-    <a href="../">${arrowUpIcon}Parent Directory</a>
-  </li>`;
+  const dirPrefix = originalUrl.endsWith("/") ? originalUrl : originalUrl + "/";
+  const parentDirLink = html`
+    <li>
+      <a href="${dirname(originalUrl)}">${arrowUpIcon}Parent Directory</a>
+    </li>
+  `;
   const dirList = dirs.sort().reduce((prev, current, index) => {
     return (prev += html`
       <li><a href="${dirPrefix}${current}">${folderIcon}${current}</a></li>
     `);
-  }, '');
+  }, "");
   const fileList = files.sort().reduce((prev, current, index) => {
     return (prev += html`
       <li><a href="${dirPrefix}${current}">${fileIcon}${current}</a></li>
     `);
-  }, '');
+  }, "");
 
   return html`
-    <!doctype html>
+    <!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -88,8 +90,8 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
         <title>Index of ${originalUrl}</title>
         <style>
           body {
-            font-family: -apple-system, BlinkMacSystemFont, system-ui, 'Ubuntu',
-              'Droid Sans', 'Segoe WPC', 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, "Ubuntu",
+              "Droid Sans", "Segoe WPC", "Segoe UI", sans-serif;
             margin: 0;
             padding: 30px;
           }
@@ -143,9 +145,9 @@ let rootDir;
 
 export function directoryIndexPlugin() {
   return {
-    name: 'directory-index',
+    name: "directory-index",
     async serverStart(args) {
-      ({rootDir} = args.config);
+      ({ rootDir } = args.config);
     },
     serve: async function (context) {
       const fp = path.join(rootDir, context.originalUrl);
@@ -155,7 +157,7 @@ export function directoryIndexPlugin() {
 
         if (s.isDirectory()) {
           const dirContent = await readdir(fp);
-          const fullPath = fp.endsWith('/') ? fp : fp + '/';
+          const fullPath = fp.endsWith("/") ? fp : fp + "/";
           const h = await getPageHTML(
             context.originalUrl,
             fullPath,
