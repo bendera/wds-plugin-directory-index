@@ -72,7 +72,7 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
   `;
   const dirList = dirs.sort().reduce((prev, current, index) => {
     return (prev += html`
-      <li><a href="${dirPrefix}${current}">${folderIcon}${current}</a></li>
+      <li><a href="${dirPrefix}${current}">${folderIcon}${current}/</a></li>
     `);
   }, "");
   const fileList = files.sort().reduce((prev, current, index) => {
@@ -118,6 +118,7 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
 
           li a {
             align-items: center;
+            border-radius: 3px;
             color: inherit;
             display: flex;
             justify-content: flex-start;
@@ -128,6 +129,8 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
 
           li a:hover {
             background-color: #dbeafe;
+            outline: 1px solid #bfdbfe;
+            outline-offset: -1px;
           }
         </style>
       </head>
