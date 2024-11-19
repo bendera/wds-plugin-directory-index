@@ -170,7 +170,7 @@ export function directoryIndexPlugin() {
           return h;
         }
       } catch (e) {
-        /* empty */
+        return e;
       }
     },
   };
