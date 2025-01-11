@@ -72,7 +72,7 @@ async function getPageHTML(originalUrl, fullPath, fileNames) {
   `;
   const dirList = dirs.sort().reduce((prev, current, index) => {
     return (prev += html`
-      <li><a href="${dirPrefix}${current}">${folderIcon}${current}</a></li>
+      <li><a href="${dirPrefix}${current}">${folderIcon}${current}/</a></li>
     `);
   }, "");
   const fileList = files.sort().reduce((prev, current, index) => {
