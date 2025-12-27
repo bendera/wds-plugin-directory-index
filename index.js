@@ -7,28 +7,43 @@ const __dirname = dirname(__filename);
 const html = String.raw;
 
 const fileIcon = html`<svg
+  xmlns="http://www.w3.org/2000/svg"
   width="16"
   height="16"
-  viewBox="0 0 16 16"
-  xmlns="http://www.w3.org/2000/svg"
   fill="currentColor"
 >
   <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M13.71 4.29l-3-3L10 1H4L3 2v12l1 1h9l1-1V5l-.29-.71zM13 14H4V2h5v4h4v8zm-3-9V2l3 3h-3z"
+    d="m13.85 4.44-3.28-3.3-.35-.14H2.5l-.5.5v13l.5.5h11l.5-.5V4.8l-.15-.36ZM13 5h-3V2l3 3ZM3 14V2h6v3.5l.5.5H13v8H3Z"
+  />
+  <path
+    d="M3.01 8V2.002h5.978v3.5l.251.251.252.252h3.5v7.993H3.01Z"
+    style="fill:#f2efdd;stroke-width:.013805;fill-opacity:1"
+  />
+  <path
+    d="M10.009 3.51V2.022l1.484 1.484a452.71 452.71 0 0 1 1.484 1.488c0 .002-.668.003-1.484.003h-1.484z"
+    style="fill:#cecaae;fill-opacity:1;stroke-width:.013805"
   />
 </svg>`;
 
 const folderIcon = html`<svg
+  xmlns="http://www.w3.org/2000/svg"
   width="16"
   height="16"
-  viewBox="0 0 16 16"
-  xmlns="http://www.w3.org/2000/svg"
-  fill="currentColor"
+  viewBox="0 0 4.233 4.233"
 >
   <path
-    d="M14.5 3H7.71l-.85-.85L6.51 2h-5l-.5.5v11l.5.5h13l.5-.5v-10L14.5 3zm-.51 8.49V13h-12V7h4.49l.35-.15.86-.86H14v1.5l-.01 4zm0-6.49h-6.5l-.35.15-.86.86H2v-3h4.29l.85.85.36.15H14l-.01.99z"
+    d="M3.834.794H2.037L1.812.569 1.72.529H.397L.265.661v2.91l.132.133h3.44l.132-.132V.926ZM3.699 3.04v.4H.524V1.852h1.188l.092-.04.228-.227h1.67v.397zm0-1.717h-1.72l-.093.04-.227.227H.527V.796h1.135l.224.225.096.04h1.72z"
+    style="stroke-width:.264583"
+  />
+  <path
+    d="M2.006 4.509V3.02h4.266l.43.429c.402.4.44.432.592.496l.163.068h6.521v.97H7.481l-.172.074c-.162.071-.196.1-.604.508l-.433.432H2.006Z"
+    style="fill:#dfac34;stroke-width:.0220473;fill-opacity:1"
+    transform="scale(.26458)"
+  />
+  <path
+    d="M1.984 9.998V7.011h4.493l.162-.068c.152-.064.19-.096.604-.507l.44-.44h6.295v6.99H1.984Z"
+    style="fill:#ffc745;fill-opacity:1;stroke-width:.0220473"
+    transform="scale(.26458)"
   />
 </svg>`;
 
