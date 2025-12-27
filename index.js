@@ -152,24 +152,30 @@ export function directoryIndexPlugin() {
       ({ rootDir } = args.config);
     },
     serve: async function (context) {
-      const fp = path.join(rootDir, context.originalUrl);
+      if (
+        context.response.status === 404 &&
+        (context.path.endsWith("index.html") || context.path === "/")
+      ) {
+        const fp = path.join(rootDir, context.originalUrl);
 
-      try {
-        const s = await stat(fp);
+        try {
+          const s = await stat(fp);
 
-        if (s.isDirectory()) {
-          const dirContent = await readdir(fp);
-          const fullPath = fp.endsWith("/") ? fp : fp + "/";
-          const h = await getPageHTML(
-            context.originalUrl,
-            fullPath,
-            dirContent
-          );
+          if (s.isDirectory()) {
+            const dirContent = await readdir(fp);
+            const fullPath = fp.endsWith("/") ? fp : fp + "/";
+            const h = await getPageHTML(
+              context.originalUrl,
+              fullPath,
+              dirContent
+            );
 
-          return h;
+            return { body: h };
+          }
+        } catch (e) {
+          /* empty */
+          return { body: e };
         }
-      } catch (e) {
-        /* empty */
       }
     },
   };
